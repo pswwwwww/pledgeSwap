@@ -1,0 +1,44 @@
+{
+  "name": "Pledge Token List",
+  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/Pledge-project-logo.png",
+  "tokens": [
+  {
+  "name": "DAI",
+  "decimals": 18,
+  "symbol": "DAI",
+  "address": "0x490BC3FCc845d37C1686044Cd2d6589585DE9B8B",
+  "chainId": 97,
+  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/DAI.png"
+  },
+  {
+  "name": "BUSD",
+  "decimals": 18,
+  "symbol": "BUSD",
+  "address": "0xE676Dcd74f44023b95E0E2C6436C97991A7497DA",
+  "chainId": 97,
+  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/BUSD.png"
+  },
+  {
+  "name": "BTC",
+  "decimals": 8,
+  "symbol": "BTC",
+  "address": "0xB5514a4FA9dDBb48C3DE215Bc9e52d9fCe2D8658",
+  "chainId": 97,
+  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/BTC.png"
+  },
+  {
+  "name": "CAKE",
+  "decimals": 18,
+  "symbol": "CAKE",
+  "address": "0xEAEd08168a2D34Ae2B9ea1c1f920E0BC00F9fA67",
+  "chainId": 97,
+  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/CAKE.png"
+  }
+  ],
+  "version": {
+  "major": 2,
+  "minor": 16,
+  "patch": 12
+  },
+  "timestamp": "2022-03-23T07:16:48.8045154Z"
+  }
