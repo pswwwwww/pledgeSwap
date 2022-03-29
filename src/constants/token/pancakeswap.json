@@ -867,14 +867,6 @@
   "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/DAI.png"
   },
   {
-  "name": "BNB",
-  "decimals": 18,
-  "symbol": "BNB",
-  "address": "0x0000000000000000000000000000000000000000",
-  "chainId": 56,
-  "logoURI": "https://dev-v2-backend.pledger.finance/storage/img/BNB.png"
-  },
-  {
   "name": "PLGR",
   "decimals": 18,
   "symbol": "PLGR",

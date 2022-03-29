@@ -65,7 +65,6 @@ height:28px
 padding:16px
 }
 }
-
 `
 // TODO: Fix UI Kit typings
 
