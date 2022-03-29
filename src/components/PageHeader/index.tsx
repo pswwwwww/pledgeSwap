@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
 import styled from 'styled-components'
-import { Heading, IconButton, Text, Flex, useModal, TuneIcon, HistoryIcon } from '@pancakeswap-libs/uikit'
+import { Heading, IconButton, Text, Flex, useModal } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import SettingsModal from './SettingsModal'
-import RecentTransactionsModal from './RecentTransactionsModal'
+import shezhi from "../../images/Icon(5).png"
 
 interface PageHeaderProps {
   title: ReactNode
@@ -12,10 +12,8 @@ interface PageHeaderProps {
 }
 
 const StyledPageHeader = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.borderColor};
-  padding: 24px;
+  padding: 20px 20px 0 20px;
 `
-
 const Details = styled.div`
   flex: 1;
 `
@@ -23,13 +21,12 @@ const Details = styled.div`
 const PageHeader = ({ title, description, children }: PageHeaderProps) => {
   const TranslateString = useI18n()
   const [onPresentSettings] = useModal(<SettingsModal translateString={TranslateString} />)
-  const [onPresentRecentTransactions] = useModal(<RecentTransactionsModal translateString={TranslateString} />)
 
   return (
     <StyledPageHeader>
       <Flex alignItems="center">
         <Details>
-          <Heading mb="8px">{title}</Heading>
+          <Heading mb="8px" style={{color:'#262533',fontWeight: 500,fontSize: "16px",lineHeight: "24px"}}>{title}</Heading>
           {description && (
             <Text color="textSubtle" fontSize="14px">
               {description}
@@ -37,14 +34,7 @@ const PageHeader = ({ title, description, children }: PageHeaderProps) => {
           )}
         </Details>
         <IconButton variant="text" onClick={onPresentSettings} title={TranslateString(1200, 'Settings')}>
-          <TuneIcon width="24px" color="currentColor" />
-        </IconButton>
-        <IconButton
-          variant="text"
-          onClick={onPresentRecentTransactions}
-          title={TranslateString(1202, 'Recent transactions')}
-        >
-          <HistoryIcon width="24px" color="currentColor" />
+          <img src={shezhi} alt="" />
         </IconButton>
       </Flex>
       {children && <Text mt="16px">{children}</Text>}

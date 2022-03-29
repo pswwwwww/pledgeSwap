@@ -1,7 +1,7 @@
 import { CurrencyAmount, JSBI, Token, Trade } from '@pswww/sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
-import { CardBody, ArrowDownIcon, Button, IconButton, Text } from '@pancakeswap-libs/uikit'
+import { CardBody, Button, IconButton, Text } from '@pancakeswap-libs/uikit'
 import { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
 import Card, { GreyCard } from 'components/Card'
@@ -36,6 +36,7 @@ import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
+import jiantou from '../../images/Icon(6).png'
 
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -302,8 +303,7 @@ const Swap = () => {
             onDismiss={handleConfirmDismiss}
           />
           <PageHeader
-            title={TranslateString(8, 'Exchange')}
-            description={TranslateString(1192, 'Trade tokens in an instant')}
+            title="Swap"
           />
           <CardBody>
             <AutoColumn gap="md">
@@ -325,16 +325,17 @@ const Swap = () => {
               <AutoColumn justify="space-between">
                 <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                   <ArrowWrapper clickable>
+                   
                     <IconButton
                       variant="tertiary"
                       onClick={() => {
                         setApprovalSubmitted(false) // reset 2 step UI for approvals
                         onSwitchTokens()
                       }}
-                      style={{ borderRadius: '50%' }}
+                      style={{ borderRadius: '50%' ,background:'none',color:'#000'}}
                       scale="sm"
                     >
-                      <ArrowDownIcon color="primary" width="24px" />
+                    <img src={jiantou} alt="" />
                     </IconButton>
                   </ArrowWrapper>
                   {recipient === null && !showWrap && isExpertMode ? (
@@ -378,7 +379,7 @@ const Swap = () => {
                   <AutoColumn gap="4px">
                     {Boolean(trade) && (
                       <RowBetween align="center">
-                        <Text fontSize="14px">{TranslateString(1182, 'Price')}</Text>
+                        <Text fontSize="14px" style={{color:'#4F4E66'}}>{TranslateString(1182, 'Price')}</Text>
                         <TradePrice
                           price={trade?.executionPrice}
                           showInverted={showInverted}
@@ -387,9 +388,9 @@ const Swap = () => {
                       </RowBetween>
                     )}
                     {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
-                      <RowBetween align="center">
-                        <Text fontSize="14px">{TranslateString(88, 'Slippage Tolerance')}</Text>
-                        <Text fontSize="14px">{allowedSlippage / 100}%</Text>
+                      <RowBetween align="center" >
+                        <Text fontSize="14px" style={{color:'#4F4E66'}}>{TranslateString(88, 'Slippage Tolerance')}</Text>
+                        <Text fontSize="14px" style={{color:'#4F4E66'}}>{allowedSlippage / 100}%</Text>
                       </RowBetween>
                     )}
                   </AutoColumn>
@@ -406,7 +407,7 @@ const Swap = () => {
                 </Button>
               ) : noRoute && userHasSpecifiedInputOutput ? (
                 <GreyCard style={{ textAlign: 'center' }}>
-                  <Text mb="4px">{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
+                  <Text mb="4px"  style={{color:'#4F4E66'}}>{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
                 </GreyCard>
               ) : showApproveFlow ? (
                 <RowBetween>

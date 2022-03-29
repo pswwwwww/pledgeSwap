@@ -10,6 +10,12 @@ const Card = styled.div<any>`
 `
 export default Card
 
+export const YellowCard = styled(Card)`
+  background-color: rgba(243, 132, 30, 0.05);
+  color: ${({ theme }) => theme.yellow2};
+  font-weight: 500;
+`
+
 export const LightCard = styled(Card)`
   border: 1px solid ${({ theme }) => theme.colors.invertedContrast};
   background-color: ${({ theme }) => theme.colors.invertedContrast};

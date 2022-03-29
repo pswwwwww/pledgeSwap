@@ -91,6 +91,14 @@ export default function PoolFinder() {
                 setShowSearch(true)
                 setActiveField(Fields.TOKEN0)
               }}
+              style={{background: "#FFFFFF",
+                border: "1px solid #E6E6EB",
+                boxSizing: "border-box",
+                borderRadius: "12px",
+                color: "#262533",
+                display:'flex',
+                justifyContent:'left'
+              }}
               startIcon={currency0 ? <CurrencyLogo currency={currency0} style={{ marginRight: '.5rem' }} /> : null}
               endIcon={<ChevronDownIcon width="24px" color="white" />}
               width="100%"
@@ -107,6 +115,14 @@ export default function PoolFinder() {
                 setShowSearch(true)
                 setActiveField(Fields.TOKEN1)
               }}
+              style={{background: "#FFFFFF",
+              border: "1px solid #E6E6EB",
+              boxSizing: "border-box",
+              borderRadius: "12px",
+              color: "#262533",
+             display:'flex',
+             justifyContent:'left'
+            }}
               startIcon={currency1 ? <CurrencyLogo currency={currency1} style={{ marginRight: '.5rem' }} /> : null}
               endIcon={<ChevronDownIcon width="24px" color="white" />}
               width="100%"

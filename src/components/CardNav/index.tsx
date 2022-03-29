@@ -7,29 +7,57 @@ import useI18n from 'hooks/useI18n'
 const StyledNav = styled.div`
   margin-bottom: 40px;
 `
+const PledgeNav = styled.div`
+ &>div{
+   width:319px;
+   height:56px;
+   background:#F5F5FA;
+border-radius: 15px;
+height:48px
+ }
+&>div>div>a{
+  width:153.48px;
+  height:48px;
+  border-radius: 11px;
+  background:#F5F5FA;
+  font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+text-align: center;
+font-style: normal;
 
+color: #8B89A3;
+}
+&>div>div>.dILQHH{
+  background: #FFFFFF;
+  border-radius: 11px;
+  color:#000
+}
+&>div>div>.gNXmx{
+  background:#F5F5FA;
+  border-radius: 15px;
+  color: #8B89A3;
+
+}
+&>div>.buAAMI{
+  background:#F5F5FA;
+}
+`
 function Nav({ activeIndex = 0 }: { activeIndex?: number }) {
   const TranslateString = useI18n()
   return (
+<PledgeNav>
     <StyledNav>
       <ButtonMenu activeIndex={activeIndex} scale="sm" variant="subtle">
-        <ButtonMenuItem id="swap-nav-link" to="/swap" as={Link}>
+        <ButtonMenuItem id="swap-nav-link" to="/swap" as={Link} style={{}}>
           {TranslateString(1142, 'Swap')}
         </ButtonMenuItem>
         <ButtonMenuItem id="pool-nav-link" to="/pool" as={Link}>
           {TranslateString(262, 'Liquidity')}
         </ButtonMenuItem>
-        <ButtonMenuItem
-          id="pool-nav-link"
-          as="a"
-          href="https://www.binance.org/en/bridge?utm_source=PancakeSwap"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          Bridge
-        </ButtonMenuItem>
       </ButtonMenu>
     </StyledNav>
+    </PledgeNav>
   )
 }
 

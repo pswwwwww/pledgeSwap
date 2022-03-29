@@ -23,18 +23,13 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   height: 34px;
   font-size: 16px;
   font-weight: 500;
-  background-color: transparent;
-  color: ${({ selected, theme }) => (selected ? theme.colors.text : '#FFFFFF')};
   border-radius: 12px;
   outline: none;
   cursor: pointer;
   user-select: none;
   border: none;
   padding: 0 0.5rem;
-  :focus,
-  :hover {
-    background-color: ${({ theme }) => darken(0.05, theme.colors.input)};
-  }
+  background:none
 `
 const LabelRow = styled.div`
   display: flex;
@@ -64,7 +59,8 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
 `
 const Container = styled.div<{ hideInput: boolean }>`
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: #fff;
+  border: 1px solid #E6E6EB;
   box-shadow: ${({ theme }) => theme.shadows.inset};
 `
 interface CurrencyInputPanelProps {
@@ -108,14 +104,17 @@ export default function CurrencyInputPanel({
     setModalOpen(false)
   }, [setModalOpen])
   return (
-    <InputPanel id={id}>
+    <InputPanel id={id} style={{  backgroundColor: "#fff"}}>
       <Container hideInput={hideInput}>
         {!hideInput && (
           <LabelRow>
             <RowBetween>
-              <Text fontSize="14px">{translatedLabel}</Text>
+              <Text fontSize="14px" style={{fontWeight: 500,
+fontSize: "14px",
+lineHeight: "22px",
+color: "#4F4E66"}}>{translatedLabel}</Text>
               {account && (
-                <Text onClick={onMax} fontSize="14px" style={{ display: 'inline', cursor: 'pointer' }}>
+                <Text onClick={onMax} fontSize="14px" style={{ display: 'inline', cursor: 'pointer', color:"#8B89A3"}}>
                   {!hideBalance && !!currency && selectedCurrencyBalance
                     ? `Balance: ${selectedCurrencyBalance?.toSignificant(6)}`
                     : ' -'}
@@ -135,7 +134,7 @@ export default function CurrencyInputPanel({
                 }}
               />
               {account && currency && showMaxButton && label !== 'To' && (
-                <Button onClick={onMax} scale="sm" variant="text">
+                <Button onClick={onMax} scale="sm" variant="text" style={{background: "rgba(93, 82, 255, 0.1)",border:" 1px solid rgba(93, 82, 255, 0.5)", boxSizing:"border-box",borderRadius: "8px",color: "#5D52FF",width:'44px',height:'24px',marginRight:'8px',fontWeight: 500,fontSize: "14px", lineHeight: "24px"}}>
                   MAX
                 </Button>
               )}
@@ -143,7 +142,7 @@ export default function CurrencyInputPanel({
           )}
           <CurrencySelect
             selected={!!currency}
-            className="open-currency-select-button"
+            style={!currency?{background:"#5D52FF",color:'#fff'}:{color:'#000'}}
             onClick={() => {
               if (!disableCurrencySelect) {
                 setModalOpen(true)
@@ -161,16 +160,16 @@ export default function CurrencyInputPanel({
                   {pair?.token0.symbol}:{pair?.token1.symbol}
                 </Text>
               ) : (
-                <Text id="pair">
+                <Text id="pair" style={currency?{color:'#000'}:{color:'#fff'}}>
                   {(currency && currency.symbol && currency.symbol.length > 20
                     ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                         currency.symbol.length - 5,
                         currency.symbol.length
                       )}`
-                    : currency?.symbol) || TranslateString(1196, 'Select a currency')}
+                    : currency?.symbol) || 'Select a Token'}
                 </Text>
               )}
-              {!disableCurrencySelect && <ChevronDownIcon />}
+              {!disableCurrencySelect && <ChevronDownIcon style={!currency?{fill:'#fff'}:{fill:'#000'}}/>}
             </Aligner>
           </CurrencySelect>
         </InputRow>

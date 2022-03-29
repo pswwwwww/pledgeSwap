@@ -56,7 +56,8 @@ export function ConfirmAddModalBottom({
         <Text>Share of Pool:</Text>
         <Text>{noLiquidity ? '100' : poolTokenPercentage?.toSignificant(4)}%</Text>
       </RowBetween>
-      <Button mt="20px" onClick={onAdd}>
+      <Button mt="20px" onClick={onAdd} style={{backgroundColor: "#5D52FF"}}
+>
         {noLiquidity ? TranslateString(250, 'Create Pool & Supply') : TranslateString(252, 'Confirm Supply')}
       </Button>
     </>

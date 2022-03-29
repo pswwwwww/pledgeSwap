@@ -194,9 +194,9 @@ export default function AddLiquidity({
 
   const modalHeader = () => {
     return noLiquidity ? (
-      <AutoColumn gap="20px">
-        <LightCard mt="20px" borderRadius="20px">
-          <RowFlat>
+      <AutoColumn gap="20px" >
+        <LightCard mt="20px" borderRadius="20px" >
+          <RowFlat >
             <UIKitText fontSize="48px" mr="8px">
               {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol}`}
             </UIKitText>
@@ -292,7 +292,7 @@ export default function AddLiquidity({
       <CardNav activeIndex={1} />
       <AppBody>
         <AddRemoveTabs adding />
-        <Wrapper>
+        <Wrapper style={{width:'420px'}}>
           <TransactionConfirmationModal
             isOpen={showConfirm}
             onDismiss={handleDismissConfirmation}
@@ -315,14 +315,15 @@ export default function AddLiquidity({
           <CardBody>
             <AutoColumn gap="20px">
               {noLiquidity && (
-                <ColumnCenter>
+                <ColumnCenter style={{  background: "rgba(93, 82, 255, 0.1)",
+                  borderRadius: "10px"}}>
                   <Pane>
                     <AutoColumn gap="12px">
-                      <UIKitText>{TranslateString(1158, 'You are the first liquidity provider.')}</UIKitText>
-                      <UIKitText>
+                      <UIKitText style={{fontWeight: 400,fontSize: "16px",lineHeight: "20px",color: "#5D52FF"}}>{TranslateString(1158, 'You are the first liquidity provider.')}</UIKitText>
+                      <UIKitText style={{fontWeight: 400,fontSize: "16px",lineHeight: "20px",color: "#5D52FF"}}>
                         {TranslateString(1160, 'The ratio of tokens you add will set the price of this pool.')}
                       </UIKitText>
-                      <UIKitText>
+                      <UIKitText style={{fontWeight: 400,fontSize: "16px",lineHeight: "20px",color: "#5D52FF"}}>
                         {TranslateString(1162, 'Once you are happy with the rate click supply to review.')}
                       </UIKitText>
                     </AutoColumn>
@@ -341,7 +342,7 @@ export default function AddLiquidity({
                 id="add-liquidity-input-tokena"
                 showCommonBases={false}
               />
-              <ColumnCenter>
+              <ColumnCenter >
                 <AddIcon color="textSubtle" />
               </ColumnCenter>
               <CurrencyInputPanel
@@ -431,6 +432,7 @@ export default function AddLiquidity({
                         ? 'danger'
                         : 'primary'
                     }
+                style={isValid?{background:'#5D52FF'}:{}}
                     width="100%"
                   >
                     {error ?? 'Supply'}
