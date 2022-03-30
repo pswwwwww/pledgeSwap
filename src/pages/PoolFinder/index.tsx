@@ -157,8 +157,12 @@ export default function PoolFinder() {
               ) : validPairNoLiquidity ? (
                 <LightCard padding="45px 10px">
                   <AutoColumn gap="sm" justify="center" style={{width:'420px'}}>
-                    <Text style={{ textAlign: 'center' }}>{TranslateString(214, 'No pool found.')}</Text>
-                    <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
+                    <Text style={{ textAlign: 'center' ,color:'#8B89A3'}}>{TranslateString(214, 'No pool found.')}</Text>
+                    <StyledInternalLink style={{color:'#5D52FF',background:" rgba(93, 82, 255, 0.1)",
+border:" 1px solid rgba(93, 82, 255, 0.5)",
+boxSizing: "border-box",
+borderRadius: "10px",width:'115px',height:"30px",display:'flex',justifyContent: "center",
+alignItems: "center"}} to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                       Create pool.
                     </StyledInternalLink>
                   </AutoColumn>
