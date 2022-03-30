@@ -70,7 +70,7 @@ export default function PoolFinder() {
   }, [setShowSearch])
 
   const prerequisiteMessage = (
-    <LightCard padding="45px 10px">
+    <LightCard padding="45px 10px" style={{width:'420px'}}>
       <Text style={{ textAlign: 'center' }}>
         {!account
           ? TranslateString(1174, 'Connect to a wallet to find pools')
@@ -156,7 +156,7 @@ export default function PoolFinder() {
                 )
               ) : validPairNoLiquidity ? (
                 <LightCard padding="45px 10px">
-                  <AutoColumn gap="sm" justify="center">
+                  <AutoColumn gap="sm" justify="center" style={{width:'420px'}}>
                     <Text style={{ textAlign: 'center' }}>{TranslateString(214, 'No pool found.')}</Text>
                     <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                       Create pool.
