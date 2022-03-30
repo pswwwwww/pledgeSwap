@@ -129,6 +129,7 @@ color: "#4F4E66"}}>{translatedLabel}</Text>
               <NumericalInput
                 className="token-amount-input"
                 value={value}
+                style={{color:'#000'}}
                 onUserInput={(val) => {
                   onUserInput(val)
                 }}

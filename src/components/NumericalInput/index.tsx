@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import { escapeRegExp } from '../../utils'
 
 const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: string }>`
-  color: ${({ error, theme }) => (error ? theme.colors.failure : theme.colors.text)};
   width: 0;
+  font-family: 'Poppins';
   position: relative;
-  font-weight: 500;
   outline: none;
   border: none;
   flex: 1 1 auto;
   background-color: transparent;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
   text-align: ${({ align }) => align && align};
   white-space: nowrap;
   overflow: hidden;
@@ -33,7 +34,11 @@ const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: s
   }
 
   ::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
+    color: #B5B3CC;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    font-family: 'Poppins';
   }
 `
 
