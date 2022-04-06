@@ -71,7 +71,7 @@ export default function PoolFinder() {
 
   const prerequisiteMessage = (
     <LightCard padding="45px 10px" style={{width:'420px'}}>
-      <Text style={{ textAlign: 'center' }}>
+      <Text style={{ textAlign: 'center',color:'#8B89A3' }}>
         {!account
           ? TranslateString(1174, 'Connect to a wallet to find pools')
           : TranslateString(208, 'Select a token to find your liquidity.')}
@@ -149,7 +149,7 @@ export default function PoolFinder() {
                         {TranslateString(212, 'You don’t have liquidity in this pool yet.')}
                       </Text>
                       <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                        <Text style={{ textAlign: 'center' }}>{TranslateString(168, 'Add Liquidity')}</Text>
+                        <Text style={{ textAlign: 'center'}}>{TranslateString(168, 'Add Liquidity')}</Text>
                       </StyledInternalLink>
                     </AutoColumn>
                   </LightCard>
@@ -158,11 +158,7 @@ export default function PoolFinder() {
                 <LightCard padding="45px 10px">
                   <AutoColumn gap="sm" justify="center" style={{width:'420px'}}>
                     <Text style={{ textAlign: 'center' ,color:'#8B89A3'}}>{TranslateString(214, 'No pool found.')}</Text>
-                    <StyledInternalLink style={{color:'#5D52FF',background:" rgba(93, 82, 255, 0.1)",
-border:" 1px solid rgba(93, 82, 255, 0.5)",
-boxSizing: "border-box",
-borderRadius: "10px",width:'115px',height:"30px",display:'flex',justifyContent: "center",
-alignItems: "center"}} to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
+                    <StyledInternalLink style={{color:'#5D52FF',background:" rgba(93, 82, 255, 0.1)",border:" 1px solid rgba(93, 82, 255, 0.5)",boxSizing: "border-box",borderRadius: "10px",width:'115px',height:"30px",display:'flex',justifyContent: "center",alignItems: "center"}} to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                       Create pool.
                     </StyledInternalLink>
                   </AutoColumn>

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Pair } from '@pswww/sdk'
+import {Pair } from '@pswww/sdk'
 import { Button, CardBody, Text } from '@pancakeswap-libs/uikit'
 import { Link } from 'react-router-dom'
 import CardNav from 'components/CardNav'
@@ -18,6 +18,7 @@ import useI18n from 'hooks/useI18n'
 import AppBody from '../AppBody'
 import ConnectWalletButton from '../../components/ConnectWalletButton'
 import hezi from '../../images/Group2102.png'
+
 
 export default function Pool() {
   const { account } = useActiveWeb3React()
@@ -56,17 +57,8 @@ export default function Pool() {
     <>
       <CardNav activeIndex={1}/>
       <RowBetween padding="0 8px" style={{width:'640px',marginBottom:'40px'}} >
-          <Text color='#262533' style={{fontWeight: 500,
-fontSize: "20px",
-lineHeight: "34px",}}>{TranslateString(107, 'Your Liquidity')}</Text>      
-          <Button id="join-pool-button" as={Link} to="/add/BNB" style={{width: "122px",
-height: "34px",
-background: "#5D52FF",
-borderRadius: "10px",
-padding:'5px 10px',
-fontWeight: 500,
-fontSize: "15px",
-lineHeight: "24px",
+          <Text color='#262533' style={{fontWeight: 500,fontSize: "20px",lineHeight: "34px",}}>{TranslateString(107, 'Your Liquidity')}</Text>  
+          <Button id="join-pool-button" as={Link} to="/add/BNB" style={{width: "122px", height: "34px", background: "#5D52FF", borderRadius: "10px", padding:'5px 10px', fontWeight: 500, fontSize: "15px", lineHeight: "24px"
 }}>
             {TranslateString(168, 'Add Liquidity')}
           </Button>
@@ -108,13 +100,13 @@ lineHeight: "24px",
         </AutoColumn>
       </AppBody>
       <div>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' ,color:'#111729'}}>
-                  {TranslateString(106, "Don't see a pool you joined?")}{' '}
-                  <StyledInternalLink id="import-pool-link" to="/find" style={{color:'#5D52FF'}}>
-                    {TranslateString(108, 'Import it.')}
-                  </StyledInternalLink>
-                </Text>
-              </div>
+        <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' ,color:'#111729'}}>
+          {TranslateString(106, "Don't see a pool you joined?")}{' '}
+          <StyledInternalLink id="import-pool-link" to="/find" style={{color:'#5D52FF'}}>
+            {TranslateString(108, 'Import it.')}
+          </StyledInternalLink>
+        </Text>
+      </div>
     </>
   )
 }
