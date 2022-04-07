@@ -28,18 +28,18 @@ font-style: normal;
 
 color: #8B89A3;
 }
-&>div>div>.dILQHH{
+&>div>div>a{
   background: #FFFFFF;
   border-radius: 11px;
   color:#000
 }
-&>div>div>.gNXmx{
+&>div>div>.sc-kstrdz{
   background:#F5F5FA;
   border-radius: 15px;
   color: #8B89A3;
 
 }
-&>div>.buAAMI{
+&>div>div{
   background:#F5F5FA;
 }
 `

@@ -37,7 +37,7 @@ width:49px;
 height:28px;
 color: #111729;
 }
-&>div>.licvhJ{
+&>div>button:focus{
   color: #FFFFFF;
   background: #5D52FF;
 }
@@ -60,6 +60,7 @@ height:28px
 }
 &>div:nth-child(1)>div{
   padding:16px 16px 0
+  
   }
 &>div>div{
 padding:16px
