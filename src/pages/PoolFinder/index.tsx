@@ -70,8 +70,8 @@ export default function PoolFinder() {
   }, [setShowSearch])
 
   const prerequisiteMessage = (
-    <LightCard padding="45px 10px" style={{width:'420px'}}>
-      <Text style={{ textAlign: 'center',color:'#8B89A3' }}>
+    <LightCard padding="20px 0 0 0" style={{width:'420px'}}>
+      <Text style={{ textAlign: 'center',color:'#8B89A3',border:" 1px solid #EAEDF5",boxSizing:'border-box',borderRadius: '12px',padding:'45px 51px' }}>
         {!account
           ? TranslateString(1174, 'Connect to a wallet to find pools')
           : TranslateString(208, 'Select a token to find your liquidity.')}
@@ -155,9 +155,9 @@ export default function PoolFinder() {
                   </LightCard>
                 )
               ) : validPairNoLiquidity ? (
-                <LightCard padding="45px 10px">
-                  <AutoColumn gap="sm" justify="center" style={{width:'420px'}}>
-                    <Text style={{ textAlign: 'center' ,color:'#8B89A3'}}>{TranslateString(214, 'No pool found.')}</Text>
+                <LightCard padding="20px 0 0 0">
+                  <AutoColumn gap="sm" justify="center" style={{width:'420px',border:" 1px solid #EAEDF5",boxSizing:'border-box',borderRadius: '12px',padding:'45px 51px'}} >
+                    <Text style={{ textAlign: 'center' ,color:'#8B89A3'}}>{TranslateString(214, 'No pool found!')}</Text>
                     <StyledInternalLink style={{color:'#5D52FF',background:" rgba(93, 82, 255, 0.1)",border:" 1px solid rgba(93, 82, 255, 0.5)",boxSizing: "border-box",borderRadius: "10px",width:'115px',height:"30px",display:'flex',justifyContent: "center",alignItems: "center"}} to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
                       Create pool.
                     </StyledInternalLink>
