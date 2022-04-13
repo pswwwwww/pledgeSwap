@@ -1,6 +1,6 @@
 {
-  "name": "@pancakeswap/interface",
-  "description": "Pancakeswap Interface",
+  "name": "@pledgeswap/interface",
+  "description": "PledgeSwap Interface",
   "version": "1.2.4",
   "homepage": ".",
   "private": true,

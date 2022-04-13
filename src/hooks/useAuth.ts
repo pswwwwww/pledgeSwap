@@ -47,5 +47,4 @@ const useAuth = () => {
 
   return { login, logout: deactivate }
 }
-
 export default useAuth
