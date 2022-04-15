@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@pswww/sdk'
 
-export const ROUTER_ADDRESS = '0xD99D1c33F9fC3444f8101754aBC46c52416550D1'
+export const ROUTER_ADDRESS = '0x1088d1860f4E51A2e20440eD23619a1D0D59beB0'
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -13,6 +13,7 @@ export const DAI = new Token(ChainId.TESTNET, '0x490BC3FCc845d37C1686044Cd2d6589
 export const BUSD = new Token(ChainId.TESTNET, '0xE676Dcd74f44023b95E0E2C6436C97991A7497DA', 18, 'BUSD', 'BUSD')
 export const BTC = new Token(ChainId.TESTNET, '0xB5514a4FA9dDBb48C3DE215Bc9e52d9fCe2D8658', 8, 'BTC', 'BTC')
 export const BNB = new Token(ChainId.TESTNET, '0x0000000000000000000000000000000000000000', 18, 'BNB', 'BNB')
+
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
